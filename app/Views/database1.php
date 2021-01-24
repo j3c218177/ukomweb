@@ -27,20 +27,8 @@
       <div class="sidebar-heading">UKom</div>
       <div class="list-group list-group-flush">
         <a href="<?php echo site_url('home'); ?>" class="list-group-item list-group-item-action bg-light">Home</a>
-        <a href="<?php echo site_url('motion'); ?>" class="list-group-item list-group-item-action bg-light">Multimedia</a>
+        <a href="<?php echo site_url('motion'); ?>" class="list-group-item list-group-item-action bg-light">Motion Typography</a>
         <a href="<?php echo site_url('database'); ?>" class="list-group-item list-group-item-action bg-light">Database</a>
-        <!--<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action bg-light">Pages</a>
-        <ul class="collapse list-unstyled" id="pageSubmenu">
-            <li class="list-group-item list-group-item-action bg-light">
-                <a href="<?php echo site_url('Database1'); ?>" class="list-group-item list-group-item-action bg-light">Page 1</a>
-            </li>
-            <li class="list-group-item list-group-item-action bg-light">
-                <a href="<?php echo site_url('Database2'); ?>" class="list-group-item list-group-item-action bg-light">Page 2</a>
-            </li>
-            <li class="list-group-item list-group-item-action bg-light">
-                <a href="<?php echo site_url('Database3'); ?>" class="list-group-item list-group-item-action bg-light">Page 3</a>
-            </li>
-        </ul>-->
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -83,44 +71,50 @@
             <h1 class="mt-4">Simple Sidebar</h1>
         <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
         <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
-         
-             <h1 class="mt-4">Welcome to Ukom INF 2021 website</h1>
-        <p>Click on the sidebar menu to go to task pages.</p>-->
+         -->
+             <h1 class="mt-4">Database Tasks</h1>
 
-        <div class="container">
-          <div class="row-md-5 text-center">
-            <img class="mb-4" src="<?php echo base_url('assets/media/logoi.PNG'); ?>" alt="mainlogo" width="150">
-            <h1 class="h3 mb-3 font-weight-normal">COVID-19 Information System</h1>
-            <h5> Spreading awareness and information about the COVID-19 pandemic </h5>
-              &nbsp;
-          </div>
-        </div>
+             <?php if (!empty($session)) { ?>
 
-        <hr />
-        <div class="container">
-          <div class="row-md-5 text-center">
-          <h1 class="h3 mb-3 font-weight-normal">What is COVID-19?</h1>
-          <div class="text-justify">
-            <p> The COVID-19 pandemic, also known as the coronavirus pandemic, 
-              is an ongoing pandemic of coronavirus disease 2019 (COVID-19) caused by severe 
-              acute respiratory syndrome coronavirus 2 (SARS-CoV-2). It was first identified 
-              in December 2019 in Wuhan, China. The World Health Organization declared the 
-              outbreak a Public Health Emergency of International Concern in January 2020 and 
-              a pandemic in March 2020. </p>
-          </div>
-              &nbsp;
-          </div>
-        </div>
+            <div class="alert alert-<?php echo $session['status'] ? 'success' : 'danger'; ?> alert-dismissible fade show" role="alert">
+                <?php echo $session['message']?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <?php } ?>
+        
+             <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Kelurahan</th>
+                    <th>Jumlah</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($dataWilayah as $row) : ?>
+                <tr>
+                    
+                    <td><?php echo $row->kelurahan;?></td>
+                    <td><?php echo $row->jumlah;?></td>
+                </tr>
+
+                <?php 
+                    endforeach; 
+
+                    if (empty($dataWilayah)) {
+                ?>
+
+                <tr>
+                    <td colspan="4" class="text-center">Tidak ada data</td>
+                </tr>
+
+                <?php } ?>
+            </tbody>
+        </table>
+
       </div>
-
-      <footer>
-        <div class="card text-center bg-info text-white">
-          <div class="card-body container">
-              Copyright &copy; Muhammad Avicenna, 2021
-          </div>
-        </div>
-      </footer>
-
     </div>
     <!-- /#page-content-wrapper -->
 
@@ -128,7 +122,7 @@
   <!-- /#wrapper -->
 
   <!-- Bootstrap core JavaScript -->
-<script src="<?php echo base_url('assets/jquery/jquery.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/jquery/jquery.min.js'); ?>"></script>
   <script src="<?php echo base_url('assets/js/bootstrap.bundle.min.js'); ?>"></script>
 
   <!-- Menu Toggle Script -->

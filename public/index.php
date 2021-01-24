@@ -35,6 +35,8 @@ $paths = new Config\Paths();
 // Location of the framework bootstrap file.
 $app = require rtrim($paths->systemDirectory, '/ ') . '/bootstrap.php';
 
+define("ENVIRONMENT","development");
+
 /*
  *---------------------------------------------------------------
  * LAUNCH THE APPLICATION

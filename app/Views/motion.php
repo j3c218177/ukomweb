@@ -27,7 +27,7 @@
       <div class="sidebar-heading">UKom</div>
       <div class="list-group list-group-flush">
         <a href="<?php echo site_url('home'); ?>" class="list-group-item list-group-item-action bg-light">Home</a>
-        <a href="<?php echo site_url('motion'); ?>" class="list-group-item list-group-item-action bg-light">Motion Typography</a>
+        <a href="<?php echo site_url('motion'); ?>" class="list-group-item list-group-item-action bg-light">Multimedia</a>
         <a href="<?php echo site_url('database'); ?>" class="list-group-item list-group-item-action bg-light">Database</a>
       </div>
     </div>
@@ -72,11 +72,28 @@
         <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
         <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
          -->
-             <h1 class="mt-4">Motion Typography Video</h1>
+             
       </div>
       <div class="container-fluid">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/JrPEzxi7XZ0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="container">
+          <div class="row-md-5 text-center">
+          <h1 class="h3 mb-3 font-weight-normal">Motion Typography Video</h1>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/JrPEzxi7XZ0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <p>A little video to brighten your day :)</p>
+            </div>
+        </div>
       </div>
+    
+      <p>&nbsp</p>
+
+    <footer>
+      <div class="card text-center bg-info text-white">
+        <div class="card-body container">
+            Copyright &copy; Muhammad Avicenna, 2021
+        </div>
+      </div>
+    </footer>
+
     </div>
     <!-- /#page-content-wrapper -->
 
